@@ -37,7 +37,7 @@ export default function Accommodation() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg text-stone-800">Hostels & Guesthouses</h3>
-                                    <p className="text-stone-600 text-sm mb-2">Social hubs like <strong>Kandy City Stay</strong> or <strong>Nature Lovers' Hostel</strong>.</p>
+                                    <p className="text-stone-600 text-sm mb-2">Social hubs like <strong>Kandy City Stay</strong> or <strong>Nature Lovers&apos; Hostel</strong>.</p>
                                     <p className="text-blue-600 font-bold">$10 – $30</p>
                                 </div>
                             </div>

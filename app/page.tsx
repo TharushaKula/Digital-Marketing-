@@ -1,16 +1,40 @@
-import HeroSection from "@/components/HeroSection";
+import HeroCarousel from "@/components/HeroCarousel";
 import Image from "next/image";
+import Link from "next/link";
 import { Train, Bus } from "lucide-react";
 
 export default function Home() {
+  const slides = [
+    {
+      imageSrc: "/images/landing-hero.png",
+      imageAlt: "Kandy Lake at Sunset",
+      title: "The Heart of the Highlands",
+      subtitle: "Welcome to Kandy, the sacred hill capital of Sri Lanka."
+    },
+    {
+      imageSrc: "/images/nature-hero.png",
+      imageAlt: "Royal Botanical Gardens",
+      title: "Lush Biodiversity",
+      subtitle: "Explore the towering avenues of the Royal Botanical Gardens."
+    },
+    {
+      imageSrc: "/images/culture-hero.png",
+      imageAlt: "Esala Perahera Festival",
+      title: "Living Culture",
+      subtitle: "Witness the thunderous energy of the Esala Perahera."
+    }
+  ];
+
   return (
     <div>
-      <HeroSection
-        title="The Heart of the Highlands"
-        subtitle="Welcome to Kandy, the sacred hill capital of Sri Lanka."
-        imageSrc="/images/landing-hero.png"
-        imageAlt="Kandy Lake at Sunset with Temple of the Tooth"
-      />
+      <HeroCarousel slides={slides}>
+        <Link
+          href="/accommodation"
+          className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg"
+        >
+          Find Your Stay
+        </Link>
+      </HeroCarousel>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -74,6 +98,38 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Map section - Kandy city centre */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">
+            Find Us in Kandy
+          </h2>
+          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+            Explore the heart of the hill capital. The map is centred on Kandy city.
+          </p>
+        </div>
+        <div className="rounded-2xl overflow-hidden shadow-xl border border-stone-200 aspect-video w-full min-h-[400px] bg-stone-100">
+          <iframe
+            title="Map of Kandy, Sri Lanka"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=80.578%2C7.255%2C80.690%2C7.326&layer=mapnik&marker=7.2906%2C80.6337"
+            className="w-full h-full min-h-[400px] border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <p className="text-center text-sm text-stone-500 mt-4">
+          <a
+            href="https://www.openstreetmap.org/?mlat=7.2906&mlon=80.6337#map=14/7.2906/80.6337"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-600 hover:text-amber-700 underline"
+          >
+            View larger map (OpenStreetMap)
+          </a>
+        </p>
       </section>
     </div>
   );
